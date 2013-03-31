@@ -7,13 +7,9 @@
 #include <CapacitiveSensor.h> //must be downloaded
 #include <Tone.h>
 
-int twelvehour;
+
 boolean snooze_button_state;
-boolean select=LOW;
-boolean up=LOW;
-boolean down=LOW;
-boolean right=LOW;
-boolean left=LOW;
+boolean select,up, right, down,left;
 int seconds;
 int minutes;
 int hours;
@@ -21,9 +17,7 @@ int x = 0;
 int currx = 1023;
 long non=0;
 boolean ledState=LOW;
-
-long previousMillis = 0;
-long interval = 500;
+long interval = 1000;
 
 
 // time when snooze period should end:
@@ -31,7 +25,7 @@ int snooze_off_hours;
 int snooze_off_minutes;
 
 //Alarm variables                                  
-boolean  alarm_on = false;
+boolean  alarm_on = true;
 boolean signal_on = false;
 boolean snooze_on = false;
 unsigned long snooze_button_timer; 
@@ -56,8 +50,8 @@ if(! RTC.isrunning()){
 
 void loop () {
   
- clock(); //Get time from RTC and print it on LCD
- update_buttons();
+
+clock();
 
   
  

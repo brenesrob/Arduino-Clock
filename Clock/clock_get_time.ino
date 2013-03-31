@@ -42,6 +42,7 @@ void clock()
     }
   }
     //Print minutes on LCD
+    lcd.setCursor(8,1);
     if(now.minute() < 10) lcd.print("0");
     lcd.print(now.minute(), DEC);
     minutes=now.minute();
